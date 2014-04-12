@@ -1,10 +1,6 @@
 import urllib.request
 from bs4 import BeautifulSoup
 
-def is_link(tag):
-	if tag.name == 'a':
-	    print(tag)
-
 # define URL
 
 url = 'http://solarsystem.nasa.gov/missions/profile.cfm?'
@@ -21,12 +17,11 @@ soup = BeautifulSoup(htmlDoc)
 
 # find all hyperlinks
 
-parent = soup.find_all("div", class_="l2text")
+parent = soup.find_all("a", class_="l2missiontitle")
 
-parent = BeautifulSoup(''.join(parent))
 
-hyperlinks = parent.find_all(is_link)
+for elem in parent:
+    position = elem['href'].find("MCode=") + 6
+    print(elem['href'][position:]) #Code mission
+    print(elem.contents) #Name mission
 
-# get links inside div class l2text
-
-#print(hyperlinks)
