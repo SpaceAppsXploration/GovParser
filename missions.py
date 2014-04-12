@@ -1,4 +1,4 @@
-import urllib.request
+import urllib.request, json
 from bs4 import BeautifulSoup
 
 url = 'http://solarsystem.nasa.gov/missions/profile.cfm?'
@@ -45,19 +45,45 @@ def get_list_missions(target):
     # find all hyperlinks
     missions = soup.find_all("a", class_="l2missiontitle")
 
-    for elem in missions:
-        position = elem['href'].find("MCode=") + 6
+    missions_list = []
+    for i in range(0, 4):
+        position = missions[i]['href'].find("MCode=") + 6
 
-        code_mission = elem['href'][position:]  # Code mission
-        name_mission = elem.contents[0]  # Name mission
+        code_mission = (missions[i])['href'][position:]  # Code mission
+        name_mission = (missions[i]).contents[0]  # Name mission
 
         image = soup.find_all(alt=name_mission)
         image_mission = image[0]['src'][2:]  # Image mission url
 
         detail_list = get_detail(target, code_mission)
 
-        print(name_mission + " - " + code_mission + " - " + image_mission + " - " + str(detail_list))
+        # print(detail_list)
+        # key_date = []
+        # for alfa in detail_list[3]:
+        #     key_date.append('" ' + alfa[0] + '" : "' + alfa[1] + '",')
 
+        #mission = '{"code" : ' + name_mission + ', "hashed" : ' + code_mission + ', "image_url : "' + image_mission + ', "goals" : ' + detail_list[0] + ', "accomplished" : ' + detail_list[1] + ', "link" : ' + detail_list[-1] + ', "headlines" : /news/archive.cfm?Mission=' + code_mission + ', "mission_type" : null , "destination" : ' + target + ', "key_date" : ' + str(key_date) + '}'
+
+        #print(detail_list[3])
+        mission = {}
+        mission["hashed"] = code_mission
+        mission["code"] = name_mission
+        mission["goals"] = detail_list[0]
+        accomplish = detail_list[1]
+        mission["accomplished"] = accomplish
+        mission["link"] = detail_list[-1]
+        #mission["key_dates"] = detail_list[3][0]
+        mission["headlines"] = '/news/archive.cfm?Mission=' + code_mission
+        mission["mission_type"] = 'null'
+        mission["image_url"] = image_mission
+        mission["destination"] = target
+
+        missions_list.append(mission)
+
+    js = json.dumps(missions_list)
+    print(js)
 
 if __name__ == "__main__":
     get_list_missions("Mars")
+
+    #Mercury Venus Moon Mars Asteroids Dwarf Planets Jupiter Saturn Uranus Neptune Kuiper Belt Beyond
