@@ -5,26 +5,31 @@
       radio_sensor=false&
       spectrometer=true& 
       probe=true&
-      amplifierfier=false
+      amplifier=false
 
 
 MISSION_TYPES
-earth_obs
-cel_body_obs
-deep_space_obs
-atm_analysis
-sample_collect
-telecom
+EarthObservation,
+AstronomicalObjectObservation,
+DeepSpaceObservation,
+AtmosphereAnalisys,
+DataCollection,
+Telecommunications
 
 
 DESTINATIONS
-mars
-jupiter
-mercury
-saturn
-neptune
-venus
-...
+Mercury,
+Venus,
+Earth,
+Moon,
+Mars,
+Asteroid,
+Jupiter,
+Saturn,
+Uranus,
+Neptune,
+Comet,
+DeepSpace
 
 COMPONENTS
 opt_sensor
