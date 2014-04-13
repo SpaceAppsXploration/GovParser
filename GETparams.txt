@@ -1,8 +1,54 @@
 # /simulation/?
-#     planet=mars&
-      mission=prop-chem&
+#     destination=mars&
+      mission=prop_chem&
       opt_sensor=true&
       radio_sensor=false&
       spectrometer=true& 
       probe=true&
       amplifierfier=false
+
+
+MISSION_TYPES
+earth_obs
+cel_body_obs
+deep_space_obs
+atm_analysis
+sample_collect
+telecom
+
+
+DESTINATIONS
+mars
+jupiter
+mercury
+saturn
+neptune
+venus
+...
+
+COMPONENTS
+opt_sensor
+radio_sensor
+spectrometer
+probe
+amplifier
+
+BUS
+therm_active
+therm_passive
+pow_prim_panels
+pow_prim_rtg
+pow_sec_batt
+pow_sec_fc
+comm_mono
+comm_omni
+aodcs_robust
+aodcs_simple
+prop_electr
+prop_chem
+cdh_standard
+cdh_optim
+struct_stand
+struct_high_resist
+
+
