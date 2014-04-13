@@ -1,0 +1,8 @@
+# /simulation/?
+#     planet=mars&
+      mission=prop-chem&
+      opt_sensor=true&
+      radio_sensor=false&
+      spectrometer=true& 
+      probe=true&
+      amplifierfier=false
