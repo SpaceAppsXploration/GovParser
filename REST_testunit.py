@@ -46,7 +46,11 @@ for t in tests:
     html = json.dumps(response.read().decode('utf-8'))
     #pprint(html)
     #pprint(json.dumps(t[1]))
-    if html == json.dumps(t[1]):
+    m = json.loads(t[1])
+    res = json.dumps(t[1])
+    if html == res:
+        # m = 
         pprint('test passed')
+        pprint(m['message'])
     else:
         pprint('not passed')
