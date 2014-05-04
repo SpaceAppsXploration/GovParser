@@ -77,6 +77,8 @@ for t in tests:
         pprint(m['message'])
         pprint('---------------------------')
     else:
+        pprint('TEST: '+ str(count))
         pprint('not passed')
+        pprint('!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         break
     count += 1
