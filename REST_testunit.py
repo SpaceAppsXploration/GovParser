@@ -23,7 +23,7 @@ try:
     if arg == '--local':
         domain = 'http://localhost:8000'
     elif arg == '--remote':
-        domain = 'http://www.spacexplore.it'
+        domain = 'http://spacexplore.it'
 except:
     pprint('No Argument Set: set --local or --remote from command line')
     raise SystemExit()
@@ -55,6 +55,8 @@ tests = [(domain+'/simulation/?destination=mars&mission=atm_analysis',
         '{"status": "OK", "content": "null", "message": "Mission is way to go!", "code": 0, "type": "cheer"}')
 ,(domain+'/simulation/?destination=titan&mission=atm_analysis&spectrometer=true&prop_electr=bustrue',
         '{"status": "OK", "content": "null", "message": "Mission is way to go!", "code": 0, "type": "cheer"}')
+,(domain+'/simulation/?destination=earth&mission=deep_space_obs&opt_sensor=true&radio_sensor=true&spectrometer=true&amplifier=true&therm_active=bustrue&pow_prim_panels=bustrue&pow_sec_batt=bustrue&comm_omni=bustrue&aodcs_robust=bustrue&prop_chem=bustrue&cdh_standard=bustrue&struct_stand=bustrue',
+  '{"status": "Error", "content": "A huge amount of data might be tranferred", "message": "Error in simulation", "code": 1, "type": "Error in payload/bus compatibility"}')
 ]
 
 pprint('---------------------------')
