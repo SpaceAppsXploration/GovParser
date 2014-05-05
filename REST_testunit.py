@@ -60,7 +60,7 @@ tests = [(domain+'/simulation/?destination=mars&mission=atm_analysis',
 ]
 
 pprint('---------------------------')
-count = 0
+count = 1 
 for t in tests:
     # response = urllib.request.urlopen(t[0]) using urllib replying binary
     r = requests.get(t[0])
