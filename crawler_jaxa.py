@@ -8,16 +8,16 @@ from pprint import pprint
 
 from JAXA_missions_list import  missions
 
-def get_detailed_page(missions):
+def get_detailed_page(missions, RESULTS):
         i = 1
         planets = ["Earth", "Venus", "Mercury", "Mars", "Saturn", "Jupiter", "Neptune", "Uranus", "Solar", "Moon"]
-        RESULTS = []
+
         for m in missions:
           if "sat" in m["link"][0]:
                   result = {}
                   link = m["link"][0]
-                  print("\n\n")
-                  print(link)
+                  #print("\n\n")
+                  #print(link)
                   tmp = m["name"][0]
                   if len(link.split("/")) > 6:
                           name = link.split("/")[5]
@@ -66,13 +66,16 @@ def get_detailed_page(missions):
                           for text in elem.contents:
                                   comp = comp + str(text)
                           
-                  print(comp.replace(".T", ". T"))
+                  #print(comp.replace(".T", ". T"))
                   
           result["jaxa"] = True                         #JAXA
           
           #pprint(result)
           
           RESULTS.append(result)
+
+        pprint(RESULTS)
+        return json.dumps(RESULTS)
 '''          
 
         #print(soup)
@@ -195,16 +198,11 @@ def get_detailed_page(missions):
         
     '''
         
-'''if __name__ == "__main__":
+if __name__ == "__main__":
     TOTALS = []
     TOTALS = get_detailed_page(missions, TOTALS)
-    #text_file = open("JAXA_output.json", "w")
-    #text_file.write(TOTALS)
-    #text_file.close() '''
-'''
-    I dati vanno infine ripuliti una volta inseriti nel db con:
-        DELETE FROM
-        public.xploration_details
-        WHERE
-        detail_type=6 AND image_link IS NULL;
-    '''
+    text_file = open("JAXA_output.json", "w")
+    text_file.write(TOTALS)
+    text_file.close()
+
+
