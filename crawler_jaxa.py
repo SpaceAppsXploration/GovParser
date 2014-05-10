@@ -16,6 +16,8 @@ def get_detailed_page(missions, RESULTS):
           if "sat" in m["link"][0]:
                   result = {}
                   link = m["link"][0]
+                  result["era"] = 2
+                  result["target"] = 1
                   #print("\n\n")
                   #print(link)
                   tmp = m["name"][0]
@@ -27,7 +29,9 @@ def get_detailed_page(missions, RESULTS):
                       result["target"] = elem           #TARGET
                   result["name"] = tmp                  #NAME
                   result["link"] = link                 #LINK
-                  result["hashed"] = name               #HASHED
+                  result["hashed"] = name
+                  result["codename"] = name
+                  #HASHED
                   response = requests.get(link)
                   soup = BeautifulSoup(str(response.text))
                   head = soup.find(class_="elem_heading_lv2_pad")
