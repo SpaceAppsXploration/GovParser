@@ -1,0 +1,128 @@
+body { 
+  background-color: #01fe90;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+  color: #000000;
+  font-size:1em;
+  
+  margin-top: 100px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  margin-left: 70px;
+}
+
+
+h1 {
+	font-family:arial, verdana, sans-serif;
+	color: #ff0000;
+	font-variant: small-caps;
+	font-style: italic;
+	font-weight: bold;
+	background: yellow;
+	padding: 20px 500px 30px 50px;
+	margin-right: 10px;
+	border-width: 5px;
+	border-style: double;
+	border-color: red;
+   }
+   
+p  {
+	text-indent: 30px;
+	text-align: justify;
+	margin: 5px 50px 5px 50px;
+	border-width: 1px;
+	/*border-style: dashed;
+	border-color: gold; */
+   }
+   
+ol {	
+	border-width: 10px;
+	border-style: solid;
+	border-color: gold;
+	margin-right: 30px;
+	color: #000000;
+	padding-left: 50px;
+	padding-right:80px;
+	text-align: left;
+	background: yellow;
+	width: 600px;
+	
+	position:relative;
+	left: 400px;
+	bottom: 0px;
+   }
+   
+a:link  {
+	color:blue;
+	}
+a:visited {
+	color:#660099;
+	}
+	
+span.important {
+	font-weight: bold;
+	}
+
+
+
+#alert {
+	color: red;
+       }	
+	
+#picture{
+/*	float:left;*/
+	width: 400px;
+/*	border-width: 2px;
+	border-style:solid;
+	border-color: red; */
+	
+	}
+.floatstop {
+	clear:both;
+	}	
+#immagine{
+	width: 400px;
+	padding-bottom: 0px;
+/*	z-index: 3; */
+	}
+/*#eye {	
+	float:left;
+     }       */
+     
+#EM {
+	width: 50%;
+/*	position: relative;
+	bottom: -100px; */
+    }
+    
+#EM_Spectrum_Spacecrafts{
+	width: 50%;
+    }
+
+#Hubble1{
+	float:left;
+	width: 20%;
+	padding-bo3tom: 0px;
+	z-index: 3;
+	}	
+#Hubble2{
+	float:left;
+	width: 23.78%;
+	padding-bo3tom: 0px;
+	z-index: 3;
+	}		
+
+#Hubble_tutto{
+	/*float:left; */
+	width: 30%;
+	padding-bottom: 0px;
+	z-index: 3;
+	}	
+	
+#transp{
+	border: none;
+	}
+	
+	
+		
