@@ -402,31 +402,6 @@ missions = [
     },
     {
         "link": [
-            "http://global.jaxa.jp/projects/sat/sds4/index.html"
-        ],
-        "name": [
-            "Small Demonstration Satellite-4 (SDS-4)"
-        ],
-        "link/_source": [
-            "/projects/sat/sds4/index.html"
-        ],
-        "link/_text": [
-            "Small Demonstration Satellite-4 (SDS-4)"
-        ],
-        "_resultNumber": 21,
-        "_widgetName": "JAXA_MISSIONS_42",
-        "_source": [
-            "1d0b4c0d-a537-458e-971b-27c7c09f16a3"
-        ],
-        "_pageUrl": "http://global.jaxa.jp/projects/",
-        "_outputTypes": {
-            "name": "STRING",
-            "link": "URL"
-        },
-        "_num": 21
-    },
-    {
-        "link": [
             "http://global.jaxa.jp/projects/sat/ets8/index.html"
         ],
         "name": [
@@ -524,56 +499,6 @@ missions = [
             "link": "URL"
         },
         "_num": 26
-    },
-    {
-        "link": [
-            "http://global.jaxa.jp/projects/sat/bepi/index.html"
-        ],
-        "name": [
-            "Mercury Exploration Mission \"BepiColombo\""
-        ],
-        "link/_source": [
-            "/projects/sat/bepi/index.html"
-        ],
-        "link/_text": [
-            "Mercury Exploration Mission \"BepiColombo\""
-        ],
-        "_resultNumber": 27,
-        "_widgetName": "JAXA_MISSIONS_42",
-        "_source": [
-            "1d0b4c0d-a537-458e-971b-27c7c09f16a3"
-        ],
-        "_pageUrl": "http://global.jaxa.jp/projects/",
-        "_outputTypes": {
-            "name": "STRING",
-            "link": "URL"
-        },
-        "_num": 27
-    },
-    {
-        "link": [
-            "http://global.jaxa.jp/projects/sat/hayabusa2/index.html"
-        ],
-        "name": [
-            "Asteroid Explorer \"Hayabusa2\""
-        ],
-        "link/_source": [
-            "/projects/sat/hayabusa2/index.html"
-        ],
-        "link/_text": [
-            "Asteroid Explorer \"Hayabusa2\""
-        ],
-        "_resultNumber": 28,
-        "_widgetName": "JAXA_MISSIONS_42",
-        "_source": [
-            "1d0b4c0d-a537-458e-971b-27c7c09f16a3"
-        ],
-        "_pageUrl": "http://global.jaxa.jp/projects/",
-        "_outputTypes": {
-            "name": "STRING",
-            "link": "URL"
-        },
-        "_num": 28
     },
     {
         "link": [

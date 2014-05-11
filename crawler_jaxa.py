@@ -11,24 +11,22 @@ from JAXA_missions_list import  missions
 def get_detailed_page(missions, RESULTS):
         i = 1
         planets = ["Earth", "Venus", "Mercury", "Mars", "Saturn", "Jupiter", "Neptune", "Uranus", "Solar", "Moon"]
-
+        RESULTS = []
         for m in missions:
           if "sat" in m["link"][0]:
                   result = {}
                   link = m["link"][0]
-                  result["era"] = 2
-                  result["target"] = 1
+                  result["era"] = 2                     #ERA
+                  result["target"] = 2                  #TARGET
                   #print("\n\n")
                   #print(link)
                   tmp = m["name"][0]
                   if len(link.split("/")) > 6:
-                          name = link.split("/")[5]
-                  
-                  result["name"] = tmp                  #NAME
-                  result["link"] = link                 #LINK
-                  result["hashed"] = name
-                  result["codename"] = name
-                  #HASHED
+                          name = link.split("/")[5]     
+                  #result["name"] = tmp                  #NAME
+                  #result["link"] = link                 #LINK
+                  result["mission"] = name
+                  #result["codename"] = name
                   response = requests.get(link)
                   soup = BeautifulSoup(str(response.text))
                   head = soup.find(class_="elem_heading_lv2_pad")
@@ -52,8 +50,8 @@ def get_detailed_page(missions, RESULTS):
                                                   data = data[0] + data[1]
                                           elif len(data) > 2:
                                                   data = data[1][1:] + data[2][:-5]
-                          result["date"] = data         #LAUNCH DATA        
-                  result["img"] = img                   #IMAGE
+                          #result["date"] = data         #LAUNCH DATA        
+                  result["img"] = img                   #FIRST_IMAGE
                   key = "About " + tmp[:4]
                   test = soup.find_all(text=re.compile(key))
                   #print(test, link, i)
@@ -65,17 +63,46 @@ def get_detailed_page(missions, RESULTS):
                   comp = ""
                   for elem in text:
                           for text in elem.contents:
-                                  comp = comp + str(text)
-                          
-                  #print(comp.replace(".T", ". T"))
+                                  comp = comp + str(text) #first paragraph
+                  second_head = soup.find(class_="elem_heading_lv3_pad")
+                  if (second_head != None):
+                          second_parent = str(second_head.find_next("img"))
+                          second_index = second_parent.find("src")                  
+                          second_end = second_parent.find(".jpg")
+                          second_img = second_parent[second_index+5:second_end+4] #SECOND_IMAGE
+                  else:
+                          second_head = soup.find(class_="elem_pic_block right_pad")
+                          second_parent = str(second_head.find_next("img"))
+                          second_index = second_parent.find("src")
+                          second_end = second_parent.find(".jpg")
+                          second_img = second_parent[second_index+5:second_end+4]
+                  paragraph_head = soup.find(class_="elem_pic_block right_pad")
+                  if (paragraph_head != None):
+                          paragraph_parent = paragraph_head.find(class_="elem_paragraph")
+                          paragraph_index = paragraph_parent.find("p")
+                          paragraph = paragraph_index.contents
+                  else:
+                          paragraph_head = soup.find(class_="elem_pic_block left_pad")
+                          paragraph_parent = paragraph_head.find(class_="elem_paragraph")
+                          paragraph_index = paragraph_parent.find("p")
+                          paragraph = paragraph_index.contents     #second paragraph
                   
-          result["jaxa"] = True                         #JAXA
+                          
+                  
+          #result["jaxa"] = True                         #JAXA
+          result["first_image"] = img
+          result["detail_1"] = 1
+          result["detail_2"] = 2
+          result["date"] = ""
+          result["goals"] = comp.replace("<br/>", "")
+          result["second_image"] = second_img
+          result["achievement"] = paragraph[0].replace("<br/>", "")
           
-          #pprint(result)
+          pprint(result)
           
           RESULTS.append(result)
 
-        pprint(RESULTS)
+        #pprint(RESULTS)
         return json.dumps(RESULTS)
 '''          
 
@@ -191,19 +218,19 @@ def get_detailed_page(missions, RESULTS):
 
         RESULTS['data'] = DATA
         
-        TOTALS.append(RESULTS)
+        RESULTS.append(RESULTS)
         i = i + 1
 
-    TOTALS = json.dumps(TOTALS)
-    return TOTALS
+    RESULTS = json.dumps(RESULTS)
+    return RESULTS
         
     '''
         
 if __name__ == "__main__":
-    TOTALS = []
-    TOTALS = get_detailed_page(missions, TOTALS)
-    text_file = open("JAXA_output.json", "w")
-    text_file.write(TOTALS)
+    RESULTS = []
+    RESULTS = get_detailed_page(missions, RESULTS)
+    text_file = open("JAXA_output_goals.json", "w")
+    text_file.write(RESULTS)
     text_file.close()
 
 
