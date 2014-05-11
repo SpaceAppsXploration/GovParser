@@ -23,9 +23,7 @@ def get_detailed_page(missions, RESULTS):
                   tmp = m["name"][0]
                   if len(link.split("/")) > 6:
                           name = link.split("/")[5]
-                  for elem in planets:
-                    if elem in tmp:
-                      result["target"] = elem           #TARGET
+                  
                   result["name"] = tmp                  #NAME
                   result["link"] = link                 #LINK
                   result["hashed"] = name
