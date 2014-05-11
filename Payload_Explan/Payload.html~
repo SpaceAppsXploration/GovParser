@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+
+<head>
+<meta name="Payload" content="Payload explanation"> 
+	  <meta name="keywords" content="Payload, spectrometer, visual, infrared, UV, gamma"> 
+	  <meta name="author" content="??"> 
+	  <meta charset="UTF-8"> 
+	  <meta name="viewport" content="width=device-width, initial scale=1.0">
+<link rel="stylesheet" type="text/css" href="style_Payload.css" />
+<title>Payload </title>
+</head>
+
+<header>
+  <h1>The Payload:  the hardware and software that sense or interact with the subject of the mission<br/><small>Are you an expert? Then click <a target="_blank" href='http://www.jpl.nasa.gov/basics/bsf12-1.php'>here</a> for a more technical introduction</small></h1>
+</header>
+<article class="fancy">
+<section>
+<div>
+<div id="picture">
+    <img id="eye" src="human-eye-crossec.jpg" alt="occhio umano">
+</div>
+<p>Think of the human eye: it can be considered as a light detector: the collected light infringes on the retina, an electrical impulse is propagated through the optic nerve to the brain, which interprets it as an information regarding the environment we are in: this is what we call <em>vision</em>. However, the light our eyes collect, the <em>visible</em> light, is not the only one it exists. The heat that lets the skin sunburn in summer or the microwaves cooking food in few minutes are other types of light, which we are not able to see. A whole spectrum of light exists, the <a target="_blank" href='http://missionscience.nasa.gov/ems/01_intro.html'> electromagnetic spectrum</a>:</p>
+</div>
+
+<div>
+    <img id="EM" src="EM_spectrum.gif" class="floatspot" alt="spettro EM">
+</div>
+<p>It is clear from the picture that light is (one should better say, is <em>also</em>) a <a target="_blank" href='http://missionscience.nasa.gov/ems/02_anatomy.html'>wave</a>, like those you get when you pull a rope up and down: only, you don't have the rope, but something called the <a target="_blank" href='http://en.wikipedia.org/wiki/Electromagnetic_field'>electromagnetic field</a>. From all this light (Radio, Microwave, Infrared...) it is possible to extract information about the surroundings. That's what <em>spectrometers</em> mounted on spacecrafts do, and the working principle is the same as for our eyes: light infringes on a surface, an electrical current is generated, read out and analyzed with the due electronics.</p>
+<div>
+    <img id="EM_Spectrum_Spacecrafts" src="observatories_across_spectrum.jpg" alt="osservatori_spettro">
+</div>
+<p>The picture shows some spacecrafts having detectors for specific wavelengths.</p>
+<h2>Visual sensors: the Spectrometers</h2>
+But how do they work? The basic fact is rather simple, although the guy who discovered it was Albert Einstein, in 1905. Not that simple then... This fact is called <em>Photoelectric Effect</em>. Basically, light is <em>also</em> a particle. When it hits a surface with due energy it is able to kick off electrons. And a travelling electron is already an electrical current, isn't it?
+Do you want to know more about how light does it? Look at this video!
+<div>
+<embed
+width="420" height="345"
+src="http://www.youtube.com/v/wFY9ZvUmM5o"
+type="application/x-shockwave-flash">
+</embed>
+</div>
+<!--If you are good enough, you can engineer a chain effect, so that electrons in turn kick off other electrons, generating a detectable electric signal at the read-out. -->
+Normally, to get electric currents out of light, people start from semiconductors such as Silicon, but other materials can be used, depending on the section of the spectrum you want to study. However, the functioning principle is, most of the time, based on the <em>p-n junction</em>. To understand it can be not that easy, but it is rather astonishing that looking at how atoms and electrons work allows us to understand how a big deal of the machinery used out there in Space peers into the Universe. If you have ten minutes, have a look at this video, and try yourself to undestand them!
+<div>
+<embed
+width="420" height="345"
+src="http://www.youtube.com/v/JBtEckh3L9Q"
+type="application/x-shockwave-flash">
+</embed>
+</div>
+<p>Now: take a reversely biased <em>p-n</em> junction and let light hit it: electrons will be transported to the electrical wires, the electrodes, and will generated a signal. Basically, they are just digital cameras, focussing light onto a detector.</p>
+<p> Among this type of devices, we have CCD and CMOS cameras.
+CCD Cameras are the most used in astronmy: the core idea behind them is that of a <em>p-n</em> junction slab attached to a pixel array of conductors taking the generated electrons out of the detector (see <a target="_blank" href ='http://micro.magnet.fsu.edu/primer/flash/ccd/index.html'>here</a> for a nice applet. Note that, in this simulation, che CCD body corresponds to our <em>p-n</em> junctions). Their use is common among amateurs (<a target="_blank" href='https://www.sbig.com/astronomy/about-ccd-imaging/how-to-choose-your-first-camera/'>do you want one?</a>), but they are used also by Hubble Space Telescope, Cassini,... E qui faccio la lista degli strumenti a seconda del tipo di meccanismo utilizzato, partendo da quelli messi in figura qui sotto...</p>
+
+<div>
+    <a target="_blank" href='http://hubblesite.org/the_telescope/nuts_.and._bolts/wavelengths.php'> <img id="Hubble1" src="hubble_chart1.gif" alt="osservatori_spettro"> </a>
+</div>
+<div>
+     <a target="_blank" href='http://hubblesite.org/the_telescope/nuts_.and._bolts/wavelengths.php'><img id="Hubble2" src="hubble_chart2.gif" alt="osservatori_spettro"></a>
+</div>
+<div>
+    <img src="opt_path_wfc3.jpg" alt="osservatori_spettro">
+</div>
+
+<div>
+    <img id="Hubble_tutto" src="wfc_diagram.jpg" alt="osservatori_spettro">
+</div>
+
+
+<!--<h3>CMOS sensors</h3>
+<embed
+width="420" height="345"
+src="http://www.youtube.com/v/SkbBM6To9F0"
+type="application/x-shockwave-flash">
+</embed> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
