@@ -16,8 +16,8 @@ def get_detailed_page(missions, RESULTS):
           if "sat" in m["link"][0]:
                   result = {}
                   link = m["link"][0]
-                  result["era"] = 2                     #ERA
-                  result["target"] = 2                  #TARGET
+                  #result["era"] = 2                     #ERA
+                  #result["target"] = 2                  #TARGET
                   #print("\n\n")
                   #print(link)
                   tmp = m["name"][0]
@@ -98,7 +98,7 @@ def get_detailed_page(missions, RESULTS):
           result["second_image"] = second_img
           result["achievement"] = paragraph[0].replace("<br/>", "")
           
-          pprint(result)
+          #pprint(result)
           
           RESULTS.append(result)
 
